@@ -14,7 +14,7 @@ export default ((opts?: Options) => {
       <footer>
         <hr />
         <p>
-          Created with <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>, © {year}
+          Made by <a href="/about">John Choque</a> using <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>, © {year}
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (

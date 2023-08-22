@@ -15,13 +15,19 @@ import {
   simplifySlug,
 } from "../../util/path"
 import { defaultListPageLayout, sharedPageComponents } from "../../../quartz.layout"
-import { FolderContent } from "../../components"
+import { FolderContent, ProjectContent } from "../../components"
 
 export const FolderPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
     ...defaultListPageLayout,
     pageBody: FolderContent(),
+    ...userOpts,
+  }
+  const projectOpts: FullPageLayout = {
+    ...sharedPageComponents,
+    ...defaultListPageLayout,
+    pageBody: ProjectContent(),
     ...userOpts,
   }
 
@@ -80,7 +86,10 @@ export const FolderPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
           allFiles,
         }
 
-        const content = renderPage(slug, componentData, opts, externalResources)
+        let content = renderPage(slug, componentData, opts, externalResources)
+        if (folder == 'projects') {
+          content = renderPage(slug, componentData, projectOpts, externalResources)
+        }
         const fp = await emit({
           content,
           slug,

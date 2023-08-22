@@ -6,7 +6,7 @@ function PageTitle({ fileData, cfg }: QuartzComponentProps) {
   const baseDir = pathToRoot(fileData.slug!)
   return (
     <h1 class="page-title">
-      <a href={baseDir}>{title}</a>
+      <a href={baseDir}><img src="/images/logo.svg" class="logo"></img></a>
     </h1>
   )
 }

@@ -2,6 +2,7 @@ import ArticleTitle from "./ArticleTitle"
 import Content from "./pages/Content"
 import TagContent from "./pages/TagContent"
 import FolderContent from "./pages/FolderContent"
+import ProjectContent from "./pages/ProjectContent"
 import Darkmode from "./Darkmode"
 import Head from "./Head"
 import PageTitle from "./PageTitle"
@@ -22,6 +23,7 @@ export {
   Content,
   TagContent,
   FolderContent,
+  ProjectContent,
   Darkmode,
   Head,
   PageTitle,
